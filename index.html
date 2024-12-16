@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Заголовок сайта -->
+    <header id="header" class="auth-page">
+      <img src="images/123.png" alt="Logo" class="header-logoimg">
+      <div class="logo">Warframe</div>
+      <nav>
+        <ul>
+          <li><button id="btndict" class="btn4">Словарь</button></li>
+          <li><button id="btngallery" class="btn4">Галерея</button></li>
+          <li><button id="testingButton">Тест</button></li>
+          <li><button id="btnresults" class="btn4">Личный кабинет</button></li>
+      </ul>
+      </nav>
+      <div class="user-info" id="user-info">
+          <span id="welcome-message"><p id="resultName"></p></span>
+          <button id="logout-btn">Выйти</button>
+      </div>
+  </header>
+  
+  <main >
+    <div class="wrapper">
+        <div class="carousel">
+            <div class="def">
+              <form name="formOne" id='formSlide1'novalidate >
+                <fieldset class="field">
+                    <legend>Логин</legend>
+                    <input class="check" type="text" name="login" id="login" pattern="^[A-Za-zА-Яа-я0-9]+$" minlength="4" maxlength="10" required>
+                    <label for="login"></label>
+                    <div class="error" id="loginError"></div>
+                </fieldset>
+                <fieldset class="field">
+                    <legend>Дата рождения</legend>
+                    <input class="check" type="date" name="birth" id="birth" min="1904-01-01" max="2024-12-12" required>
+                    <label for="birth"></label>
+                </fieldset>
+                <fieldset class="field">
+                    <legend>Пол</legend>
+                    <input type="radio" name="sex" checked="checked" value="Мужской" id="male">
+                    <label for="male">Мужской</label>
+                    <input type="radio" name="sex" value="Женский" id="female">
+                    <label for="female">Женский</label>
+                </fieldset>
+                <button id="btn1" class="btn4">далее</button>
+
+              </form>
+            </div>
+
+            <div class="def">
+              <form name="formTwo" id="formSlide2" novalidate>
+                <!-- Заголовок сайта -->
+                <h3>Добро пожаловать в мир Warframe — эпическое космическое приключение, где вы станете частью древней расы тэнно, сражающихся за будущее человечества.</h3>
+                
+                <p>Warframe — это бесплатная многопользовательская онлайн-игра, в которой вам предстоит взять под контроль уникальное оружие — Варфрейм, облаченного в мощный боевой костюм, каждый из которых имеет свои способности и стиль боя. Вместе с ним вы будете отправляться на опасные миссии по всей галактике, сражаясь с враждебными фракциями.</p>
+                
+                <h4>Что вас ждет в Warframe?</h4>
+                
+                <ul>
+                  <li><strong>Разнообразие варфреймов:</strong> каждый варфрейм — это уникальная боевая единица с различными силами и тактическими возможностями. Выберите фрейм, который идеально соответствует вашему стилю игры!</li>
+                  <li><strong>Интенсивные PvE-сражения:</strong> сражайтесь с ордами врагов в динамичных и эпичных миссиях.</li>
+                  <li><strong>Совместные миссии:</strong> объединяйтесь с друзьями или другими игроками, разрабатывайте стратегии и побеждайте в самых сложных заданиях. Чем больше вы работаете в команде, тем сильнее становитесь!</li>
+                  <li><strong>Увлекательный сюжет:</strong> раскройте тайну древней и ныне не существующей цивилизации Орокин.</li>
+                  <li><strong>Широкий выбор оружия:</strong> настраивайте и улучшайте арсенал для любых боевых ситуаций. От простого оружия до самых мощных и уникальных моделей!</li>
+                </ul>
+                
+                <p>Вы можете выбрать одиночную игру или объединиться с другими игроками для выполнения совместных миссий, сражений с могущественными боссами и исследования неизведанных миров. Warframe регулярно обновляется, предлагая новые фреймы, оружие и локации, что позволяет вам всегда находить новые цели и возможности для развития.</p>
+            
+                <h4><a href="https://www.warframe.com" target="_blank" style="color: #80b3ff; text-decoration: none;">Начните свое приключение в <strong>Warframe</strong> прямо сейчас!</a></h4>
+
+                <p>Присоединяйтесь к сообществу игроков, развивайтесь, совершенствуйте свои навыки и сражайтесь за будущее человечества. В этом эпическом мире вы можете стать настоящим героем, сражаясь против самых сильных врагов!</p>
+                
+                
+                <p id="resultName"></p>
+              </form>
+            </div>
+            
+
+            <div class="def">
+              <form name="formThree" id='formSlide3' novalidate>
+              <h2>Вопросы по Warframe:</h2>
+      <div>
+        <label for="question1">Слышали ли вы о Warframe?</label>
+        <textarea id="question1" placeholder="Ваш ответ" required></textarea>
+      </div>
+      <div>
+        <label for="question2">Нравится ли вам тематика данной игры?</label>
+        <textarea id="question2" placeholder="Ваш ответ" required></textarea>
+      </div>
+      <div>
+        <label for="question3">Сколько варфреймов на текущий момент:</label>
+        <div>
+          <input type="radio" id="question3-option1" name="question3" value="42" required>
+          <label for="question3">42</label>
+        </div>
+        <div>
+          <input type="radio" id="question3-option2" name="question3" value="50">
+          <label for="question3">50</label>
+        </div>
+        <div>
+          <input type="radio" id="question3-option3" name="question3" value="52">
+          <label for="question3">52</label>
+        </div>
+        <div>
+          <input type="radio" id="question3-option4" name="question3" value="59">
+          <label for="question3">59</label>
+        </div>
+      </div>
+      <div>
+        <label for="question4">какую фракцию в простонародии называют "гренки"?:</label>
+        <div>
+          <input type="radio" id="question4-option1" name="question4" value="Гринир" required>
+          <label for="question4-option1">Гринир</label>
+        </div>
+        <div>
+          <input type="radio" id="question4-option2" name="question4" value="Корпус">
+          <label for="question4-option2">Корпус</label>
+        </div>
+        <div>
+          <input type="radio" id="question4-option3" name="question4" value="Орокин">
+          <label for="question4-option3">Орокин</label>
+        </div>
+        <div>
+          <input type="radio" id="question4-option4" name="question4" value="Зараженные">
+          <label for="question4-option4">Зараженные</label>
+        </div>
+      </div>
+      <div>
+        <label for="question5">Когда вышел Warframe?:</label>
+        <div>
+          <input type="radio" id="question5-option1" name="question5" value="2015" required>
+          <label for="question5-option1">2015</label>
+        </div> 
+        <div>
+          <input type="radio" id="question5-option2" name="question5" value="2010">
+          <label for="question5-option2">2010</label>
+        </div>
+        <div>
+          <input type="radio" id="question5-option3" name="question5" value="2013">
+          <label for="question5-option3">2013</label>
+        </div>
+        <div>
+          <input type="radio" id="question5-option4" name="question5" value="2014">
+          <label for="question5-option4">2014</label>
+        </div>
+      </div>
+      <div>
+        <label for="question6">Как называется последнее обновление, которое вышло 13 декабря?:</label>
+        <div>
+          <input type="radio" id="question6-option1" name="question6" value="Dark sector" required>
+          <label for="question6-option1">Dark sector</label>
+        </div>
+        <div>
+          <input type="radio" id="question6-option2" name="question6" value="Warsector">
+          <label for="question6-option2">Warsector</label>
+        </div>
+        <div>
+          <input type="radio" id="question6-option3" name="question6" value="Remade">
+          <label for="question6-option3">Remade</label>
+        </div>
+        <div>
+          <input type="radio" id="question6-option4" name="question6" value="1999">
+          <label for="question6-option4">1999</label>
+
+          <br>
+          <br>
+          <div class="result-question1" id="resultQuestion1"></div>
+            <div class="result-question2" id="resultQuestion2"></div>
+            <div class="result-question3" id="resultQuestion3"></div>
+
+            <br>
+            <div class="result-question4" id="resultQuestion4"></div>
+
+            <br>
+            <div class="result-question5" id="resultQuestion5"></div>
+
+            <br>
+            <div class="result-question6" id="resultQuestion6"></div>
+
+        </div>
+        <button id="btn2" class="btn2">Вернуться обратно</button> 
+      <button id="btn3" class="btn3">Показать результаты</button>
+      <button id="Again" class="btn3">Еще раз</button>     
+      </form>
+
+      
+      
+        
+      
+    </div>
+    </div> 
+          <div class="def">
+          <form name="formFour id=formSlide4">
+          <div class="result-container" >
+            Личный кабинет<button id="logout">Выйти</button>
+            <br>
+            Ваш пол:<div class="result-gender" id="resultGender"></div>
+            Ваша дата рождения:<div class="result-info" id="resultInfo"></div>
+            <br>
+            Результаты последнего теста:
+            <div class="questionResult1" id="questionResult1"></div>
+            <div class="questionResult2" id="questionResult2"></div>
+            <div class="questionResult3" id="questionResult3"></div>
+
+            <br>
+            <div class="questionResult4" id="questionResult4"></div>
+
+            <br>
+            <div class="questionResult5" id="questionResult5"></div>
+
+            <br>
+            <div class="questionResult6" id="questionResult6"></div>
+
+
+            <button id="btnbtn" class="btn2">Вернуться обратно</button> 
+            
+            
+          </form>
+          </div>
+          </div>
+
+          <div class="def">
+          <form name="formFive" id="formSlide5" novalidate>
+            <h2>Словарь терминов</h2>
+            
+            <!-- Поле для поиска -->
+            <input type="text" id="searchInput" oninput="searchTerm()" placeholder="Поиск термина...">
+            
+            <div id="termList">
+              <div class="term" onclick="showDescription('Warframe')">Warframe</div>
+              <div class="term" onclick="showDescription('Grineer')">Grineer</div>
+              <div class="term" onclick="showDescription('Corpus')">Corpus</div>
+              <div class="term" onclick="showDescription('Orokin')">Orokin</div>
+              <div class="term" onclick="showDescription('Tenno')">Tenno</div>
+              <div class="term" onclick="showDescription('Void')">Void</div>
+              <div class="term" onclick="showDescription('Sentients')">Sentients</div>
+              <div class="term" onclick="showDescription('Operator')">Operator</div>
+              <div class="term" onclick="showDescription('Faction')">Faction</div>
+              <div class="term" onclick="showDescription('Focus')">Focus</div>
+            </div>
+          
+            <!-- Поле для отображения описания выбранного термина -->
+            <div id="descriptionField">
+              <h3>Описание:</h3>
+              <p id="descriptionText">Выберите термин для отображения описания.</p>
+            </div>
+          </form>
+        </div>
+           
+
+        <div class="def">
+          <form name="formSix" id="formSlide6" novalidate>
+              <div class="slider-container">
+                  <!-- Контейнер слайдера -->
+                  <div class="slider">
+                      <!-- Слайды -->
+                      <div class="slide" id="slide1">
+                          <img src="images/grineer.jpg" alt="Grineer">
+                          <p class="caption">Гринир - агрессивная военная фракция в Warframe, состоящая из клонов, стремящихся к захвату и контролю над другими мирами. Их армия использует передовые, но часто нестабильные технологии.</p>
+                      </div>
+                      <div class="slide" id="slide2">
+                          <img src="images/Corpus.jpg" alt="Corpus">
+                          <p class="caption">Корпус — богатая торговая фракция в Warframe, владеющая мощными технологиями и огромным влиянием. Они ориентированы на прибыль и используют роботизированные армии.</p>
+                      </div>
+                      <div class="slide" id="slide3">
+                          <img src="images/infested.png" alt="Infested">
+                          <p class="caption">Заражённые — мутировавшие существа в Warframe, возникшие из-за древнего вируса. Они представляют собой агрессивную угрозу, поглощая всё живое.</p>
+                      </div>
+                      <div class="slide" id="slide4">
+                          <img src="images/Sentients.jpg" alt="Sentients">
+                          <p class="caption">Владеющие Разумом — Почти бессмертные существа, враждующие с Тенно. Они стремятся разрушить цивилизации и вернуть себе контроль над галактикой.</p>
+                      </div>
+                      <div class="slide" id="slide5">
+                          <img src="images/Tenno.jpg" alt="Tenno">
+                          <p class="caption">Тенно — древние воины в Warframe, использующие могущественные боевые костюмы, называемые Warframe. Они обладают уникальными способностями и борются за сохранение баланса во вселенной.</p>
+                      </div>
+                  </div>
+                  <!-- Кнопки слайдера -->
+                  <button type="button" id="prevSlide" class="slider-button">Предыдущий</button>
+                  <button type="button" id="nextSlide" class="slider-button">Следующий</button>
+                  <!-- Информация о текущем слайде -->
+                  <div id="slideInfo" class="slide-info">1 слайд из 5</div>
+              </div>
+          </form>
+      </div>
+      
+        
+
+        </div>
+    </div>
+</main>
+    <footer id="footer" >
+        <div class="footer-content">
+            <div class="footer-buttons">
+                <p id="welcome-message-footer" ></p>
+            </div>
+            <p>Контакты: <a href="#">+7(900)987-65-43</a> | <a href="#">Соцсети</a></p>
+            <p>&copy; 2024 Warframe</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

@@ -5,15 +5,10 @@ const date = document.getElementById("birth");
 const gender = document.querySelector('input[name="sex"]:checked');
 
 const resultName = document.getElementById("resultName");
+const resultName2 = document.getElementById("resultName2");
 const resultInfo = document.getElementById("resultInfo");
 const resultGender = document.getElementById('resultGender');
 
-const resultQuestion1 = document.getElementById('resultQuestion1');
-const resultQuestion2 = document.getElementById('resultQuestion2');
-const resultQuestion3 = document.getElementById('resultQuestion3');
-const resultQuestion4 = document.getElementById('resultQuestion4');
-const resultQuestion5 = document.getElementById('resultQuestion5');
-const resultQuestion6 = document.getElementById('resultQuestion6');
 
 function fun1() {
     // Проверка на минимальную длину логина
@@ -28,6 +23,7 @@ function fun1() {
     } else {
         document.documentElement.style.setProperty("--transfX", 1 * (-100) + "%");
         document.getElementById("resultName").textContent = `Привет, ${login.value}!`;
+        document.getElementById("resultName2").textContent = ` ${login.value}`;
         document.getElementById("resultInfo").textContent = `${date.value}`;
         document.getElementById("resultGender").textContent = `${gender.value}`;
         document.getElementById('header').classList.remove('auth-page');
@@ -51,52 +47,77 @@ function fun3() {
     const question5 = document.querySelector('input[name="question5"]:checked');
     const question6 = document.querySelector('input[name="question6"]:checked');
 
+    // Инициализация баллов
+    let score = 0;
 
+    // Проверка вопроса 1 (Да / да / ДА)
+    let resultQuestion1 = `Вопрос 1: ${question1 || "Не указан"}`;
+    if (question1.toLowerCase() === "да") {  // Проверка с использованием toLowerCase() для "да" и "Да"
+        resultQuestion1 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
+    } else {
+        resultQuestion1 += `<p style="color: red;">Правильный ответ: Да</p>`;
+    }
+    document.getElementById("questionResult1").innerHTML = resultQuestion1;
 
-    document.getElementById("questionResult1").innerHTML = `Вопрос 1: ${question1 || "Не указан"}`;
-    document.getElementById("resultQuestion1").innerHTML = `Вопрос 1: ${question1 || "Не указан"}`;
-    document.getElementById("questionResult2").innerHTML = `Вопрос 2: ${question1 || "Не указан"}`;
-    document.getElementById("resultQuestion2").innerHTML = `Вопрос 2: ${question2 || "Не указан"}`;
+    // Проверка вопроса 2 (Да / да / ДА)
+    let resultQuestion2 = `Вопрос 2: ${question2 || "Не указан"}`;
+    if (question2.toLowerCase() === "да") {
+        resultQuestion2 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
+    } else {
+        resultQuestion2 += `<p style="color: red;">Правильный ответ: Да</p>`;
+    }
+    document.getElementById("questionResult2").innerHTML = resultQuestion2;
 
+    // Обработка вопроса 3 (выбор ответа)
     let result3 = `Вопрос 3: ${question3 ? question3.value : "Не указан"}`;
     if (question3 && question3.value == 59) {
         result3 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
     } else {
         result3 += `<p style="color: red;">Правильный ответ: 59</p>`;
     }
     document.getElementById("questionResult3").innerHTML = result3;
-    document.getElementById("resultQuestion3").innerHTML = result3;
 
+    // Обработка вопроса 4 (выбор ответа)
     let result4 = `Вопрос 4: ${question4 ? question4.value : "Не указан"}`;
     if (question4 && question4.value === "Гринир") {
         result4 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
     } else {
         result4 += `<p style="color: red;">Правильный ответ: Гринир</p>`;
     }
     document.getElementById("questionResult4").innerHTML = result4;
-    document.getElementById("resultQuestion4").innerHTML = result4;
 
+    // Обработка вопроса 5 (выбор ответа)
     let result5 = `Вопрос 5: ${question5 ? question5.value : "Не указан"}`;
     if (question5 && question5.value == 2013) {
         result5 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
     } else {
         result5 += `<p style="color: red;">Правильный ответ: 2013</p>`;
     }
     document.getElementById("questionResult5").innerHTML = result5;
-    document.getElementById("resultQuestion5").innerHTML = result5;
 
+    // Обработка вопроса 6 (выбор ответа)
     let result6 = `Вопрос 6: ${question6 ? question6.value : "Не указан"}`;
     if (question6 && question6.value === "1999") {
         result6 += `<p style="color: green;">Правильно!</p>`;
+        score++;  // Увеличиваем баллы за правильный ответ
     } else {
         result6 += `<p style="color: red;">Правильный ответ: 1999</p>`;
     }
     document.getElementById("questionResult6").innerHTML = result6;
-    document.getElementById("resultQuestion6").innerHTML = result6;
 
+    // Выводим количество баллов
+    document.getElementById("totalScore").innerHTML = `Ваши баллы: ${score} из 6`;
 
+    // Показываем контейнер с результатами
     document.querySelector(".result-container").style.display = "block";
 }
+
+
 
 
 
@@ -116,7 +137,7 @@ function validateSlide1() {
     const birthDate = document.getElementById('birth').value;
 
 
-    if (!/^[A-Za-zА-Яа-я0-9]+$/.test(name)) {
+    if (!/^[А-Яа-я0-9]+$/.test(name)) {
         return false;
     }
 
@@ -143,6 +164,8 @@ form.addEventListener('submit', (event) => {
         form.birth.labels[0].innerText = "";
     } else {
         form.birth.labels[0].innerText = "Неверно введена дата";
+        form.birth.labels[0].style.color = "red";
+
     }
 });
 
@@ -203,17 +226,23 @@ btn3.addEventListener('click', function(event) {
     fun3();
 });
 
-const btnbtn = document.getElementById('btnbtn');
-btnbtn.addEventListener('click', function(event) {
-    event.preventDefault();  
-    document.documentElement.style.setProperty("--transfX", 1 * (-100) + "%");
-});
+
 
 const btn2 = document.getElementById('btn2');
 btn2.addEventListener('click', function(event) {
     event.preventDefault();  
     fun2();
 });
+
+
+
+
+const btnback = document.getElementById('btnback')
+btnback.addEventListener('click', fun2)
+
+
+
+
 
 function Results(){
         document.documentElement.style.setProperty("--transfX", 3 * (-100) + "%");
@@ -336,3 +365,12 @@ document.getElementById('nextSlide').addEventListener('click', function() {
 
 // Инициализация слайдера
 showSlide(currentSlide);
+
+
+document.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", function() {
+      document.querySelectorAll("button").forEach(btn => btn.classList.remove("active"))
+      this.classList.add("active");
+    });
+  });
+  

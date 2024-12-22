@@ -15,6 +15,7 @@
       <div class="logo">Warframe</div>
       <nav>
         <ul>
+          <li><button id="btnback" class="btn4">Главная</button></li>
           <li><button id="btndict" class="btn4">Словарь</button></li>
           <li><button id="btngallery" class="btn4">Галерея</button></li>
           <li><button id="testingButton">Тест</button></li>
@@ -34,7 +35,7 @@
               <form name="formOne" id='formSlide1'novalidate >
                 <fieldset class="field">
                     <legend>Логин</legend>
-                    <input class="check" type="text" name="login" id="login" pattern="^[A-Za-zА-Яа-я0-9]+$" minlength="4" maxlength="10" required>
+                    <input class="check" type="text" name="login" id="login" pattern="^[А-Яа-я0-9]+$" minlength="4" maxlength="10" required>
                     <label for="login"></label>
                     <div class="error" id="loginError"></div>
                 </fieldset>
@@ -88,11 +89,11 @@
               <form name="formThree" id='formSlide3' novalidate>
               <h2>Вопросы по Warframe:</h2>
       <div>
-        <label for="question1">Слышали ли вы о Warframe?</label>
+        <label for="question1">Warframe - многопользовательская игра?</label>
         <textarea id="question1" placeholder="Ваш ответ" required></textarea>
       </div>
       <div>
-        <label for="question2">Нравится ли вам тематика данной игры?</label>
+        <label for="question2">В warframe есть ближний бой?</label>
         <textarea id="question2" placeholder="Ваш ответ" required></textarea>
       </div>
       <div>
@@ -172,18 +173,7 @@
 
           <br>
           <br>
-          <div class="result-question1" id="resultQuestion1"></div>
-            <div class="result-question2" id="resultQuestion2"></div>
-            <div class="result-question3" id="resultQuestion3"></div>
-
-            <br>
-            <div class="result-question4" id="resultQuestion4"></div>
-
-            <br>
-            <div class="result-question5" id="resultQuestion5"></div>
-
-            <br>
-            <div class="result-question6" id="resultQuestion6"></div>
+          <div id="totalScore"></div>
 
         </div>
         <button id="btn2" class="btn2">Вернуться обратно</button> 
@@ -200,8 +190,8 @@
           <div class="def">
           <form name="formFour id=formSlide4">
           <div class="result-container" >
-            Личный кабинет<button id="logout">Выйти</button>
             <br>
+            Ваше имя:<div class="result-name" id="resultName2"></div>
             Ваш пол:<div class="result-gender" id="resultGender"></div>
             Ваша дата рождения:<div class="result-info" id="resultInfo"></div>
             <br>
@@ -220,7 +210,7 @@
             <div class="questionResult6" id="questionResult6"></div>
 
 
-            <button id="btnbtn" class="btn2">Вернуться обратно</button> 
+            <button id="logout" class="btn2">Выйти</button> 
             
             
           </form>

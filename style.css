@@ -4,12 +4,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background-image: url('images/warframe-4.jpg');
+
+    background-image: url('images/Warframe-4.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     margin-top: 200px;
@@ -22,7 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
 }
 
 
@@ -232,7 +234,7 @@ footer .footer-buttons button:hover {
 #formSlide1 input,
 #formSlide1 select,
 #formSlide1 textarea {
-    padding: 8px;
+    padding: 4px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
@@ -675,3 +677,16 @@ footer .footer-buttons button:hover {
     display: block;
     margin: 0 auto;  
 }
+
+
+
+.active {
+    background-color: rgb(25, 0, 255);
+    border-color: #ff0000;
+    box-shadow: 0 0 5px 2px #00eeff;
+  }
+  
+
+  textarea {
+    resize: none; /* Отключает возможность изменения размера поля */
+  }
